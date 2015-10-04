@@ -1,16 +1,16 @@
 # Breast Image Registration
 
-A program helps in locating possible tumor by locating abnormalities in mammograms. Image resistration is ude to find abnormal areas.See the resultant images for each case in the result folder.
+A program helps in locating possible tumor by locating abnormalities in mammograms. Image registration is used to find abnormal areas. See the resultant images for each case in the sample_result folder.
 
 ## Algorithm Steps:
 
-- __Pre-process Image.__ Remove label from an image present in the top left corner
+- __Pre-process Image.__ Remove label from an image present in the top left corner.
 
-- __Transform Image.__ Finding matching areas by using SIFT descriptor, using these features to develop a transform (Assumption:only translation + rotation is present, no shear), using this transform to align the destination image.
+- __Transform Image.__ Finding matching areas by using SIFT descriptor. Usw these mappings to develop a transform ( Assumption: only translation + rotation is present, no shear). Use this transform to align two images.
 
-- __TAligned Image Difference processing.__ Get the difference of aligned images to get abnormal areas. Process this image to remove smaller masses(usually noise). Also remove the edge pixels from the image as the edge pixels are brighter due to a Sharpe change in shape at edges. 
+- __Aligned Image Difference processing.__ Get the difference of aligned images to get abnormal areas. Process this image to remove smaller masses(usually noise). Also remove the edge pixels from the image as the edge pixels are brighter due to a Sharpe change in shape at edges. 
 
-- __TAligned Image Difference processing.__ Locate masses with reasonable size, find bounding box around the region and locate the breast that has this mass.
+- __Locate Abnormal Areas.__ Locate masses with reasonable size, find bounding box around the regions and locate the breast that has this mass.
 
 ## Explanation
 
